@@ -40,6 +40,7 @@ const PorductSlice = createSlice({
   reducers: {
     clear: (state) => {
       state.items = [];
+      state.wishList = null;
     },
     addToCart: (state) => {
       state.wishList += 1;

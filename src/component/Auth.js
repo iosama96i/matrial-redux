@@ -12,7 +12,8 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { show } from "../store/counterSlice";
 
 function Copyright() {
   return (
@@ -49,9 +50,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
   const classes = useStyles();
-  // const dispatch = useDispatch();
-
-
+  const dispatch = useDispatch();
 
   return (
     <Container component="main" maxWidth="xs">
@@ -86,6 +85,7 @@ export default function SignIn() {
           />
           <Button
             fullWidth
+            onClick={() => dispatch(show())}
             variant="contained"
             color="primary"
             className={classes.submit}

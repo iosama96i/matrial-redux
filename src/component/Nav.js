@@ -6,8 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import { show } from "../store/counterSlice";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Nav() {
   const classes = useStyles();
+  const dispatch = useDispatch();
   const wishlist = useSelector((state) => state.products.wishList);
   return (
     <div className={classes.root}>
@@ -41,7 +42,11 @@ export default function Nav() {
           <Button variant="contained">
             wishList {wishlist ? wishlist : ""}
           </Button>
-          <Button variant="contained" color="secondary">
+          <Button
+            onClick={() => dispatch(show())}
+            variant="contained"
+            color="secondary"
+          >
             logout
           </Button>
         </Toolbar>

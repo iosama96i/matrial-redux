@@ -8,14 +8,16 @@ import { useSelector } from "react-redux";
 import AddItem from "./component/AddPost";
 
 function App() {
+  const isAuth = useSelector((state) => state.counter.showlogin);
+
   return (
     <Fragment>
-      <Nav />
-      <Auth />
-      <Msg />
-      <Counter />
-      <AddItem/>
-      <Product />
+      {isAuth && <Nav />}
+      {!isAuth && <Auth />}
+      {isAuth && <Msg />}
+      {isAuth && <Counter />}
+      {isAuth && <AddItem />}
+      {isAuth && <Product />}
     </Fragment>
   );
 }
