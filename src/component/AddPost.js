@@ -48,6 +48,8 @@ export default function AddPost() {
           discription,
         })
       );
+      setTitle("");
+      setDiscription("");
     }
   };
   console.log(article);
@@ -73,7 +75,7 @@ export default function AddPost() {
           />
           <br></br>
           <br></br>
-          <Button variant="contained" onClick={() => handlePost}>
+          <Button type="button" variant="contained" onClick={handlePost}>
             post
           </Button>
           <br />

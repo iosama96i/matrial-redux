@@ -29,21 +29,19 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Msg() {
+export default function Article() {
   const news = useSelector((state) => state.post);
   const classes = useStyles();
-  console.log(news);
+
   return (
     <div className={classes.container}>
       <Card className={classes.root}>
         <CardContent>
-          <Typography variant="h5"> Welcome to our community </Typography>
+          <Typography variant="h5">{news.title} </Typography>
           <br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p>{news.discription}</p>
         </CardContent>
       </Card>
     </div>
   );
 }
-
-// import React from "react";

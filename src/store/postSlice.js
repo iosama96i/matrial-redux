@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  id: null,
-  title: null,
-  discription: null,
+ 
+      id: "12",
+      title: "load",
+      discription: "ceat",
+  
 };
 
 const postSlice = createSlice({
@@ -11,7 +13,9 @@ const postSlice = createSlice({
   initialState,
   reducers: {
     postAdded: (state, action) => {
-      state.push(action.payload);
+      state.id = action.payload.id;
+      state.title = action.payload.title;
+      state.discription = action.payload.discription;
     },
   },
 });
